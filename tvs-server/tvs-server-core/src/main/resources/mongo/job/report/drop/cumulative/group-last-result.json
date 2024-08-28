@@ -1,0 +1,20 @@
+{
+  "$group": {
+    "_id": {
+      "dropName": "$_id.dropName",
+      "name": "$_id.name"
+    },
+    "testCaseCount": {
+      "$last": "$testCaseCount"
+    },
+    "resultCode": {
+      "$last": "$result.resultCode"
+    },
+    "iso": {
+      "$last": "$result.iso"
+    },
+    "date": {
+      "$last": "$result.date"
+    }
+  }
+}

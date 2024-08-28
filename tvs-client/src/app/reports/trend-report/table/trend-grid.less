@@ -1,0 +1,38 @@
+.tms-trend-report-grid {
+    width: auto
+}
+
+.tms-trend-report-grid-scroll {
+    overflow: scroll;
+    height: 500px;
+    box-sizing: border-box;
+}
+
+.tms-trend-report-grid {
+    thead tr th, tbody tr th, tbody tr td {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-align: center;
+        border: solid 1px @table-border-color;
+    }
+
+    .grid-labels {
+        max-width: none;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .grid-cells {
+        max-width: 100px;
+    }
+
+    .numeric-input {
+        min-width: 40px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    thead tr th:last-child {
+        border-right: solid 1px @table-border-color;
+    }
+}

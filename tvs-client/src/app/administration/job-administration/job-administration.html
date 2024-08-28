@@ -1,0 +1,12 @@
+<div ncy-breadcrumb></div>
+<h2 class="tms-title tms-jobs-administration-title">Job Administration</h2>
+
+<div class="tms-test-results">
+    <tms-grid
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        on-page-changed="vm.onPageChanged(page)"
+        storage-key-fn="vm.getStorageKey()">
+    </tms-grid>
+</div>

@@ -1,0 +1,78 @@
+.tms-test-flakiness {
+    &-report {
+        overflow: scroll;
+        max-height: 500px;
+        border: 1px solid @table-border-color;
+    }
+    &-table {
+        width: auto;
+        max-width: none;
+        font-size: @font-size-small;
+
+        thead > tr th,
+        tbody > tr th,
+        tbody > tr td {
+            padding: @padding-small-vertical @padding-small-horizontal;
+            border-bottom-width: 1px;
+            white-space: nowrap;
+            line-height: 1em;
+            vertical-align: middle;
+        }
+
+        thead > tr th {
+            vertical-align: bottom;
+        }
+        tbody > tr th {
+            font-weight: normal;
+        }
+
+        border: none;
+        thead > tr > th,
+        tbody > tr > th,
+        tbody > tr > td {
+            border-left: none;
+        }
+
+        tbody > tr td.tms-test-flakiness-result {
+            min-width: 30px;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+
+            &[data-status="PASSED"], &[data-status="SUCCESS"] {
+                background-color: @state-success-bg;
+            }
+            &[data-status="PENDING"] {
+                background-color: @state-warning-bg;
+            }
+            &[data-status="FAILED"], &[data-status="BROKEN"] {
+                background-color: @state-danger-bg;
+            }
+            &[data-status="CANCELLED"], &[data-status="SKIPPED"] {
+                background-color: @table-bg-active;
+            }
+        }
+    }
+    &-execution-count {
+        cursor: pointer;
+    }
+}
+
+.tms-test-flakiness-session {
+    position: relative;
+    height: 80px;
+    > div {
+        position: absolute;
+        left: -14px;
+        top: 34px;
+        font-weight: normal;
+        transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+    }
+}
+
+.tms-test-duration {
+    &-fast {
+        font-size: 0.8em;
+    }
+}

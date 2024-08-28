@@ -1,0 +1,212 @@
+
+[
+  {
+    "_id": {
+      "$oid": "0644b7d8e4b03ebcdc2b0fc0"
+    },
+    "executionId": "session_id_0",
+    "uri": "https://fem114-eiffel004.lmera.ericsson.se:8443/jenkins/job/5294_TAF_RFA_Loop/50/",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "resultCode": "PASSED",
+    "passRate": 0,
+    "testCaseCount": 0,
+    "testSuiteCount": 0,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "1.2",
+    "ISO_VERSION": "1.18.4",
+    "ISO_ARTIFACT_ID": "ERICenm_CXP903938",
+    "JENKINS_JOB_NAME": "RFA_JOB"
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fc4"
+    },
+    "executionId": "session_id_1",
+    "uri": "https://fem114-eiffel004.lmera.ericsson.se:8443/jenkins/job/5294_TAF_RFA_Loop/50/",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "resultCode": "PASSED",
+    "passRate": 50,
+    "testCaseCount": 2,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "1.2",
+    "ISO_VERSION": "1.18.40",
+    "ISO_ARTIFACT_ID": "ERICenm_CXP903938",
+    "JENKINS_JOB_NAME": "RFA_JOB"
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fcd"
+    },
+    "executionId": "session_id_2",
+    "uri": "http://atvts3400.athtem.eei.ericsson.se:9003/#main/?dashboardId=538d",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": {
+        "$date": {
+          "$numberLong": "1449931017000"
+        }
+      },
+      "stopDate": {
+        "$date": {
+          "$numberLong": "1449931617000"
+        }
+      },
+      "duration": 8915000
+    },
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "resultCode": "FAILED",
+    "passRate": 66,
+    "testCaseCount": 3,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "1.4",
+    "ISO_VERSION": "1.18.41"
+  },
+  {
+    "_id": {
+      "$oid": "5645a0f2e4b03ebcdc2b0fce"
+    },
+    "executionId": "session_id_3",
+    "uri": "http://besttestingurlever.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285662000" } },
+    "time": {
+      "startDate": {
+        "$date": {
+          "$numberLong": "1450017417000"
+        }
+      },
+      "stopDate": {
+        "$date": {
+          "$numberLong": "1450018017000"
+        }
+      },
+      "duration": 2216000
+    },
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "resultCode": "PASSED",
+    "passRate": 66,
+    "testCaseCount": 3,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "1.3",
+    "ISO_VERSION": "1.18.42"
+  },
+  {
+    "_id": {
+      "$oid": "5645a0f2e4b03ebcdc2b0fd0"
+    },
+    "executionId": "session_id_4",
+    "uri": "http://besttestingurlever.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285662000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate":  { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 1300000
+    },
+    "jobId": "d490b7d8e4b03ebcdc2b1235",
+    "resultCode": "PASSED",
+    "passRate": 66,
+    "testCaseCount": 3,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "16.2",
+    "ISO_VERSION": "1.3.3"
+  },
+  {
+    "_id": {
+      "$oid": "10c5a0f2e4b03ebcdc2b0fbc"
+    },
+    "executionId": "session_id_5",
+    "uri": "http://session-5.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285662000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1453714833000" } },
+      "stopDate":  { "$date" : { "$numberLong" : "1453722659000" } },
+      "duration": 7826000
+    },
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "resultCode": "PASSED",
+    "passRate": 66,
+    "testCaseCount": 2,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "16.3",
+    "ISO_VERSION": "1.4.8"
+  },
+  {
+    "_id": {
+      "$oid": "11c5a0f2e4b03ebcdc2b0fde"
+    },
+    "executionId": "session_id_6",
+    "uri": "http://session-6.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285662000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454430659000" } },
+      "stopDate":  { "$date" : { "$numberLong" : "1454436063000" } },
+      "duration": 5404000
+    },
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "resultCode": "PASSED",
+    "passRate": 77,
+    "testCaseCount": 2,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "16.3",
+    "ISO_VERSION": "1.4.9"
+  },  {
+    "_id": {
+      "$oid": "11c5a0f2e4b03ebcdc2b0fdf"
+    },
+    "executionId": "session_id_ignored",
+    "uri": "http://session-6-ignored.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285672000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454430669000" } },
+      "stopDate":  { "$date" : { "$numberLong" : "1454436073000" } },
+      "duration": 5404000
+    },
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "resultCode": "PASSED",
+    "passRate": 33,
+    "testCaseCount": 2,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842527000" } },
+    "DROP_NAME": "16.3",
+    "ISO_VERSION": "1.4.10",
+    "ignored": true
+  },
+  {
+    "_id": {
+      "$oid": "12c5a0f2e4b03ebcdc2b0f01"
+    },
+    "executionId": "session_id_7",
+    "uri": "http://session-7.test/",
+    "createdDate": { "$date" : { "$numberLong" : "1420285662000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454667303000" } },
+      "stopDate":  { "$date" : { "$numberLong" : "1454673901000" } },
+      "duration": 6598000
+    },
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "resultCode": "PASSED",
+    "passRate": 87,
+    "testCaseCount": 2,
+    "testSuiteCount": 1,
+    "lastExecutionDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "DROP_NAME": "16.4",
+    "ISO_VERSION": "1.2.0"
+  }
+]

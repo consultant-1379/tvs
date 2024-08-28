@@ -1,0 +1,8 @@
+<div class="ellipsis-overflow"
+    data-title="{{vm.findProperty(row, col.field) | picker:col.formatFilter}}"
+     data-delay="300,0"
+     bs-tooltip>
+    <test-case-status status-value="{{vm.findProperty(row, col.field)}}">
+        {{ vm.findProperty(row, col.field) | picker:col.formatFilter }}
+    </test-case-status>
+</div>

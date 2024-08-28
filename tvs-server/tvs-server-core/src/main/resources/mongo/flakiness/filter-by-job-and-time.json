@@ -1,0 +1,26 @@
+{
+  "$match": {
+    "$and": [
+      {
+        "jobId": {
+          "$eq": #
+        }
+      },
+      {
+        "time.startDate": {
+          "$gte": #
+        }
+      },
+      {
+        "time.stopDate": {
+          "$lte": #
+        }
+      },
+      {
+        "ignored": {
+          "$ne": true
+        }
+      }
+    ]
+  }
+}

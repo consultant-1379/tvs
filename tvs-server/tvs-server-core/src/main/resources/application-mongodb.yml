@@ -1,0 +1,6 @@
+spring:
+    profiles: mongodb
+    data:
+        mongodb:
+            database: ${mongodb.database}
+            uri: mongodb://${hosts.mongodb}:27017/${mongodb.database}

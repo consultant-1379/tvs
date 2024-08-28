@@ -1,0 +1,108 @@
+<div class="tms-job">
+
+    <toolbar>
+        <div class="btn-group">
+            <button class="btn btn-default tms-btn-test-flakiness"
+                    type="button"
+                    ui-sref="testFlakiness({jobId: vm.job.id})">
+                <i class="fa fa-table"></i>
+                Test Flakiness Report
+            </button>
+            <tip-marker tip="Shows stability of individual test cases in the activity for defined period.">
+            </tip-marker>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default tms-btn-drop-report"
+                    type="button"
+                    ui-sref="dropReport({jobId: vm.job.id})">
+                <i class="fa fa-line-chart"></i>
+                Drop Report
+            </button>
+            <tip-marker tip="Shows execution trends of test cases for drops in a defined period."></tip-marker>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default"
+                    type="button"
+                    ui-sref="notifications({jobId: vm.job.id})">
+                <i class="fa fa-envelope-o"></i>
+                Notifications
+            </button>
+        </div>
+    </toolbar>
+
+    <object-portlet tip="All information about selected test campaign or automated job."
+                    source="vm.portletJob" title="Test Activity Info" col-count="3" field-config="vm.portletFields"
+                    class="tms-job">
+    </object-portlet>
+
+    <form name="datepickerForm">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Test Activity Statistics
+                    <tip-marker
+                        tip="Chart represents a chronology of test executions.
+                            Chart data can be zoomed in and out or deselected.
+                            Filters, applied to Test Session grid are represented on a chart.">
+                    </tip-marker>
+                </h3>
+            </div>
+            <div class="panel-body row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <dl class="dl-rows">
+                            <dt>Test Sessions</dt>
+                            <dd>{{vm.total}}</dd>
+                        </dl>
+                    </div>
+                    <div class="form-group">
+                        <label>Show latest:</label>
+                        <ui-select ng-model="vm.topTestSessionCount" ng-change="vm.reloadChart()">
+                            <ui-select-match placeholder="Select">
+                                <span>{{$select.selected}}</span>
+                            </ui-select-match>
+                            <ui-select-choices
+                                repeat="num in vm.getTopNList($select.search) | filter: $select.search">
+                                <span>{{num}}</span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                    <div class="form-group">
+                        <label>X-Axis Label:</label>
+                        <button class="btn btn-default"
+                                ng-model="vm.selectedLabel"
+                                ng-change="vm.chartApi.refresh()"
+                                bs-options="label as label.value for label in vm.xLabels"
+                                bs-select>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <nvd3 options="vm.chartOptions"
+                          data="vm.chartData"
+                          config="{deepWatchData: true, refreshDataOnly: false}"
+                          api="vm.chartApi">
+                    </nvd3>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <tms-grid
+        heading="Test Sessions"
+        heading-tip="Grid shows test sessions of selected test activity.
+            Test Session is a single execution of test campaign or automated jobs.
+            Data in a grid can be reordered or filtered by columns.
+            A chart above represents the current view of filtered data.
+            Clicking on a row opens detailed test session screen."
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        row-click="vm.navigateToTestSession(row)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        on-page-changed="vm.onPageChanged(page)"
+        storage-key-fn="vm.getStorageKey()"
+        statuses="vm.statusService.getStatuses()">
+        <csv-export link="/jobs/{{vm.job.id}}/test-sessions/csv">
+        </csv-export>
+    </tms-grid>
+</div>

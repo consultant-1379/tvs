@@ -1,0 +1,28 @@
+<div class="tms-test-case-result-history">
+
+    <toolbar>
+        <div class="btn-group"
+             bs-tooltip
+             data-placement="bottom">
+            <button type="button"
+                    class="btn btn-default tms-btn-details"
+                    ng-click="vm.navigateToTestCaseDetails(vm.testCaseId)">
+                <i class="fa fa-external-link"></i>
+                Test Case Details
+            </button>
+            <tip-marker tip="Opens test case in Test Case Management System."></tip-marker>
+        </div>
+    </toolbar>
+
+    <tms-grid
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        on-page-changed="vm.onPageChanged(page)"
+        storage-key-fn="vm.getStorageKey()"
+        statuses="vm.statusService.getStatuses()">
+        <csv-export link="/test-case-results/{{vm.testCaseId}}/history/csv">
+        </csv-export>
+    </tms-grid>
+
+</div>

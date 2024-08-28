@@ -1,0 +1,11 @@
+{
+  "$group": {
+    "_id": "$name",
+    "resultCode": {
+      "$first": "$resultCode"
+    },
+    "REQUIREMENTS": {
+      "$first": "$REQUIREMENTS"
+    }
+  }
+}

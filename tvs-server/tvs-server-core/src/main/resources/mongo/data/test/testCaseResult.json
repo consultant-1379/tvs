@@ -1,0 +1,552 @@
+[
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fc5"
+    },
+    "testCaseId": "TORF-507",
+    "name": "TORF-507",
+    "resultCode": "PASSED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.40",
+    "DROP_NAME": "1.2",
+    "PRIORITY": "Low",
+    "GROUPS": ["PMIC", "OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fc7"
+    },
+    "testCaseId": "TORF-13126_FUNC_1",
+    "name": "TORF-13126_FUNC_1",
+    "resultCode": "FAILED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.39",
+    "DROP_NAME": "1.2",
+    "PRIORITY": "Normal",
+    "GROUPS": ["PMIC"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fc8"
+    },
+    "testCaseId": "TORF-12388_FUNC_1",
+    "name": "TORF-12388_FUNC_1",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.41",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fca"
+    },
+    "testCaseId": "TORF-199924_FUNC_9",
+    "name": "TORF-199924_FUNC_9",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.41",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["PMIC", "OpenDJ"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124", "US3"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fcb"
+    },
+    "testCaseId": "TORF-199924_FUNC_9",
+    "name": "TORF-199924_FUNC_9",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124", "US3"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fcc"
+    },
+    "testCaseId": "TORF-199924_FUNC_9",
+    "name": "TORF-199924_FUNC_9",
+    "resultCode": "FAILED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["PMIC", "OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ],
+    "REQUIREMENTS": ["US124", "US2"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fcd"
+    },
+    "testCaseId": "there_is_no_such_test",
+    "name": "there_is_no_such_test",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842517000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449846060000" } },
+      "duration": 3543000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["OpenDJ"],
+    "COMPONENTS": [
+      "License Management"
+    ],
+    "REQUIREMENTS": ["US1", "US2"]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fce"
+    },
+    "testCaseId": "there_is_no_such_test",
+    "name": "there_is_no_such_test",
+    "resultCode": "CANCELLED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449844200000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449844200000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449845580000" } },
+      "duration": 1380000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fca",
+    "testSuiteName": "testsuite_id_3",
+    "executionId": "session_id_4",
+    "jobId": "d490b7d8e4b03ebcdc2b1235",
+    "contextId": "systemId-2",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Blocker",
+    "GROUPS": ["OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fcf"
+    },
+    "testCaseId": "there_is_no_such_test",
+    "name": "there_is_no_such_test",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449843600000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449843600000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449847200000" } },
+      "duration": 3600000
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fca",
+    "testSuiteName": "testsuite_id_3",
+    "executionId": "session_id_4",
+    "jobId": "d490b7d8e4b03ebcdc2b1235",
+    "contextId": "systemId-2",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Normal",
+    "GROUPS": ["PMIC", "OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fa0"
+    },
+    "testCaseId": "TORF-508",
+    "name": "TORF-508",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Normal",
+    "GROUPS": ["NAM TMS"],
+    "COMPONENTS": [
+      "License Management"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fa1"
+    },
+    "testCaseId": "TORF-508",
+    "name": "TORF-508",
+    "resultCode": "FAILED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3",
+    "PRIORITY": "Normal",
+    "GROUPS": ["PMIC", "OpenDJ", "NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fa2"
+    },
+    "testCaseId": "TORF-508",
+    "name": "TORF-508",
+    "resultCode": "PENDING",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc6",
+    "testSuiteName": "testsuite_id_1",
+    "executionId": "session_id_1",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "ISO_VERSION": "1.18.4",
+    "GROUPS": ["OpenDJ"],
+    "COMPONENTS": [
+      "License Management"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fa3"
+    },
+    "testCaseId": "TORF-508",
+    "name": "TORF-508",
+    "resultCode": "PENDING",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1",
+    "GROUPS": ["NAM TMS"],
+    "COMPONENTS": [
+      "SSO Utilities"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d8e4b03ebcdc2b0fa4"
+    },
+    "testCaseId": "TORF-508",
+    "name": "TORF-508",
+    "resultCode": "PASSED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1478779408000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1478779408630" } },
+      "duration": 630
+    },
+    "testSuiteResultId": "5644b7d9e4b03ebcdc2b0fc9",
+    "testSuiteName": "testsuite_id_2",
+    "executionId": "session_id_2",
+    "jobId": "d490b7d8e4b03ebcdc2b1234",
+    "contextId": "systemId-1"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fa1"
+    },
+    "testCaseId": "TORF-515",
+    "name": "TORF-515",
+    "resultCode": "PASSED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1453714920000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1453716314000" } },
+      "duration": 1394000
+    },
+    "testSuiteResultId": "1644b7d9e4b03ebcdc2b4f7a",
+    "testSuiteName": "testsuite_id_4",
+    "executionId": "session_id_5",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.1"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fa2"
+    },
+    "testCaseId": "TORF-516",
+    "name": "TORF-516",
+    "resultCode": "PASSED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1453716362000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1453722530000" } },
+      "duration": 6168000
+    },
+    "testSuiteResultId": "1644b7d9e4b03ebcdc2b4f7a",
+    "testSuiteName": "testsuite_id_4",
+    "executionId": "session_id_5",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.40",
+    "DROP_NAME": "1.3"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fb1"
+    },
+    "testCaseId": "TORF-515",
+    "name": "TORF-515",
+    "resultCode": "PASSED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454430733000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454432444000" } },
+      "duration": 1711000
+    },
+    "testSuiteResultId": "1244b7d9e4b03ebcdc2b4f8a",
+    "testSuiteName": "testsuite_id_5",
+    "executionId": "session_id_6",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.41",
+    "DROP_NAME": "1.3"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fb2"
+    },
+    "testCaseId": "TORF-516",
+    "name": "TORF-516",
+    "resultCode": "FAILED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454432544000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454435962000" } },
+      "duration": 3418000
+    },
+    "testSuiteResultId": "1244b7d9e4b03ebcdc2b4f8b",
+    "testSuiteName": "testsuite_id_5",
+    "executionId": "session_id_6",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.2"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fb3"
+    },
+    "testCaseId": "TORF-516",
+    "name": "TORF-516",
+    "resultCode": "FAILED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842498000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454432554000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454435972000" } },
+      "duration": 3418000
+    },
+    "testSuiteResultId": "1244b7d9e4b03ebcdc2b4f8a",
+    "testSuiteName": "testsuite_id_5",
+    "executionId": "session_id_ignored",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.2",
+    "ignored": true
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fc1"
+    },
+    "testCaseId": "TORF-515",
+    "name": "TORF-515",
+    "resultCode": "CANCELLED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454667434000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454669937000" } },
+      "duration": 2503000
+    },
+    "testSuiteResultId": "1344b7d9e4b03ebcdc2b4f9a",
+    "testSuiteName": "testsuite_id_6",
+    "executionId": "session_id_7",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.42",
+    "DROP_NAME": "1.3"
+  },
+  {
+    "_id": {
+      "$oid": "bc44b7d8e4b03ebcdc2b0fc2"
+    },
+    "testCaseId": "TORF-516",
+    "name": "TORF-516",
+    "resultCode": "CANCELLED",
+    "importStatus": "IMPORTED",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454670062000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454673960000" } },
+      "duration": 3898000
+    },
+    "testSuiteResultId": "1344b7d9e4b03ebcdc2b4f9a",
+    "testSuiteName": "testsuite_id_6",
+    "executionId": "session_id_7",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.40",
+    "DROP_NAME": "1.3"
+  },
+  {
+    "_id": {
+      "$oid": "dcf4b7d8e4b03ebcdc2b0fc0"
+    },
+    "testCaseId": "TORF-517",
+    "name": "TORF-517 Test execution",
+    "resultCode": "CANCELLED",
+    "importStatus": "NOT_FOUND",
+    "createdDate": { "$date" : { "$numberLong" : "1449842488000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454670062000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454673960000" } },
+      "duration": 3898000
+    },
+    "testSuiteResultId": "1344b7d9e4b03ebcdc2b4f9a",
+    "testSuiteName": "testsuite_id_6",
+    "executionId": "session_id_7",
+    "jobId": "e215b7d8e4b03ebcdc2b0819",
+    "contextId": "systemId-3",
+    "ISO_VERSION": "1.18.41",
+    "DROP_NAME": "1.3"
+  }
+]

@@ -1,0 +1,39 @@
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="enunciate-2.1.0.xsd">
+
+    <title>The API available from /api/tvs</title>
+    <copyright>Ericsson (c)</copyright>
+    <terms>Ericsson APIs Terms of Service</terms>
+    <code-license name="Web service code license usage" file="LICENSE.txt" />
+    <api-license name="Web service API License" file="LICENSE.txt" />
+    <contact name="Ericsson" url="http://www.ericsson.com/"/>
+    <application root="tvs"/>
+
+    <api-classes>
+        <include pattern="com.ericsson.gic.tms.**"/>
+    </api-classes>
+
+    <namespaces>
+        <namespace id="tvs-api" uri="http://www.ericsson.com/tvs-api"/>
+    </namespaces>
+
+    <modules>
+        <docs docsDir="tvs-server/tvs-server-api/target/docs"/>
+        <jaxb datatype-detection="local" disabled="false"/>
+        <jaxrs datatype-detection="local" disabled="false" groupBy="path"/>
+        <c disabled="true" />
+        <c-xml-client disabled="true"/>
+        <csharp disabled="true" />
+        <csharp-xml-client disabled="true"/>
+        <obj-c disabled="true" />
+        <obj-c-xml-client disabled="true" />
+        <jersey disabled="true" />
+        <php disabled="true" />
+        <php-json-client disabled="true" />
+        <php-xml-client disabled="true" />
+        <xml enabled="true"/>
+        <gwt-json-overlay disabled="true"/>
+        <ruby-json-client disabled="true"/>
+        <java-xml-client disabled="true"/>
+    </modules>
+</enunciate>

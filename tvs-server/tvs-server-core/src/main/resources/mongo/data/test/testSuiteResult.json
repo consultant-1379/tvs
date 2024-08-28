@@ -1,0 +1,199 @@
+[
+  {
+    "_id": {
+      "$oid": "0944b7d9e4b03ebcdc2b0fea"
+    },
+    "_class": "com.ericsson.gic.tms.tvs.domain.model.verdict.TestSuiteResult",
+    "name": "testsuite_id_0",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": {
+        "$date": {
+          "$numberLong": "1449844618000"
+        }
+      },
+      "duration": 2100500
+    },
+    "statistics": {
+      "total": 0,
+      "passed": 0,
+      "cancelled": 0,
+      "failed": 0,
+      "broken": 0
+    },
+    "testSessionId": "0644b7d8e4b03ebcdc2b0fc0",
+    "passRate": 0
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fc6"
+    },
+    "_class": "com.ericsson.gic.tms.tvs.domain.model.verdict.TestSuiteResult",
+    "name": "testsuite_id_1",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617500" } },
+      "duration": 2100500
+    },
+    "statistics": {
+      "total": 2,
+      "passed": 1,
+      "cancelled": 1,
+      "failed": 0,
+      "broken": 0
+    },
+    "testSessionId": "5644b7d8e4b03ebcdc2b0fc4",
+    "passRate": 50
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fc9"
+    },
+    "_class": "com.ericsson.gic.tms.tvs.domain.model.verdict.TestSuiteResult",
+    "name": "testsuite_id_2",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": {
+        "$date": {
+          "$numberLong": "1449931017000"
+        }
+      },
+      "stopDate": {
+        "$date": {
+          "$numberLong": "1449931617000"
+        }
+      },
+      "duration": 2100000
+    },
+    "statistics": {
+      "total": 3,
+      "passed": 2,
+      "cancelled": 0,
+      "failed": 1,
+      "broken": 0
+    },
+    "testSessionId": "5644b7d9e4b03ebcdc2b0fcd",
+    "passRate": 33
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fd0"
+    },
+    "_class": "com.ericsson.gic.tms.tvs.domain.model.verdict.TestSuiteResult",
+    "name": "testsuite_id_2_0",
+    "createdDate": {
+      "$date": {
+        "$numberLong": "1449842489000"
+      }
+    },
+    "time": {
+      "startDate": {
+        "$date": {
+          "$numberLong": "1450017417000"
+        }
+      },
+      "stopDate": {
+        "$date": {
+          "$numberLong": "1450018017000"
+        }
+      },
+      "duration": 2100000
+    },
+    "statistics": {
+      "total": 3,
+      "passed": 2,
+      "cancelled": 0,
+      "failed": 1,
+      "broken": 0
+    },
+    "testSessionId": "5645a0f2e4b03ebcdc2b0fce",
+    "passRate": 33
+  },
+  {
+    "_id": {
+      "$oid": "5644b7d9e4b03ebcdc2b0fca"
+    },
+    "name": "testsuite_id_3",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1449842517000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1449844617000" } },
+      "duration": 2100000
+    },
+    "statistics": {
+      "total": 3,
+      "passed": 2,
+      "cancelled": 1,
+      "failed": 0,
+      "broken": 0
+    },
+    "testSessionId": "5645a0f2e4b03ebcdc2b0fd0",
+    "passRate": 66
+  },
+  {
+    "_id": {
+      "$oid": "1644b7d9e4b03ebcdc2b4f7a"
+    },
+    "name": "testsuite_id_4",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1453714893000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1453722541000" } },
+      "duration": 7648000
+    },
+    "statistics": {
+      "total": 2,
+      "passed": 2,
+      "cancelled": 0,
+      "failed": 0,
+      "broken": 0
+    },
+    "testSessionId": "10c5a0f2e4b03ebcdc2b0fbc",
+    "passRate": 100
+  },
+  {
+    "_id": {
+      "$oid": "1244b7d9e4b03ebcdc2b4f8a"
+    },
+    "name": "testsuite_id_5",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454430671000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454436050000" } },
+      "duration": 5379000
+    },
+    "statistics": {
+      "total": 2,
+      "passed": 1,
+      "cancelled": 0,
+      "failed": 1,
+      "broken": 0
+    },
+    "testSessionId": "11c5a0f2e4b03ebcdc2b0fde",
+    "passRate": 50
+  },
+  {
+    "_id": {
+      "$oid": "1344b7d9e4b03ebcdc2b4f9a"
+    },
+    "name": "testsuite_id_6",
+    "createdDate": { "$date" : { "$numberLong" : "1449842489000" } },
+    "time": {
+      "startDate": { "$date" : { "$numberLong" : "1454667361000" } },
+      "stopDate": { "$date" : { "$numberLong" : "1454673972000" } },
+      "duration": 6611000
+    },
+    "statistics": {
+      "total": 2,
+      "passed": 0,
+      "cancelled": 2,
+      "failed": 0,
+      "broken": 0
+    },
+    "testSessionId": "12c5a0f2e4b03ebcdc2b0f01",
+    "passRate": 0
+  }
+]
+

@@ -1,0 +1,8 @@
+<div class="input-group">
+    <span class="input-group-btn" ng-include="'app/common/tables/filters/operation-addon.html'"></span>
+    <input type="text" name="{{name}}" ng-disabled="$filterRow.disabled"
+           ng-model="vm.filter[name].value"
+           ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+           ng-enter
+           class="form-control text-right numeric-input"/>
+</div>

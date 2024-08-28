@@ -1,0 +1,62 @@
+{
+    "$group": {
+        "_id": "$name",
+        "testCaseId": {
+            "$first": "$name"
+        },
+        "testSuiteResultId": {
+            "$first": "$testSuiteResultId"
+        },
+        "averageDuration": {
+            "$avg": "$time.duration"
+        },
+        "executionCount": {
+            "$sum": 1
+        },
+        "lastExecutionDate": {
+            "$max": "$time.startDate"
+        },
+        "successCount": {
+            "$sum": {
+                "$cond": {
+                    "if": {
+                        "$eq": [
+                            "$resultCode",
+                            "PASSED"
+                        ]
+                    },
+                    "then": 1,
+                    "else": 0
+                }
+            }
+        },
+        "failureCount": {
+            "$sum": {
+                "$cond": {
+                    "if": {
+                        "$eq": [
+                            "$resultCode",
+                            "FAILED"
+                        ]
+                    },
+                    "then": 1,
+                    "else": 0
+                }
+            }
+        },
+        "errorCount": {
+            "$sum": {
+                "$cond": {
+                    "if": {
+                        "$eq": [
+                            "$resultCode",
+                            "BROKEN"
+                        ]
+                    },
+                    "then": 1,
+                    "else": 0
+                }
+            }
+        }
+    }
+}

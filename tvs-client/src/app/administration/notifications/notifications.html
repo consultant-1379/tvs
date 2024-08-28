@@ -1,0 +1,85 @@
+<div ncy-breadcrumb></div>
+<h2 class="tms-title">E-mail Notification: {{vm.job.name}}</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Rules</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Condition</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="rule in vm.rules track by $index">
+                <td>
+                    <ui-select ng-model="rule.field"
+                               on-select="vm.updateRule(rule, {{rule}})">
+                        <ui-select-match class="ui-select-match" placeholder="Select">
+                            {{$select.selected.title}}
+                        </ui-select-match>
+                        <ui-select-choices class="ui-select-choices"
+                                           repeat="item.field as item in vm.fields">
+                            {{item.title}}
+                        </ui-select-choices>
+                    </ui-select>
+                </td>
+                <td>
+                    <ui-select ng-model="rule.operation"
+                               on-select="vm.updateRule(rule)">
+                        <ui-select-match class="ui-select-match" placeholder="Select">
+                            {{$select.selected}}
+                        </ui-select-match>
+                        <ui-select-choices class="ui-select-choices"
+                                           repeat="item in vm.getOperations(rule)">
+                            {{item}}
+                        </ui-select-choices>
+                    </ui-select>
+                </td>
+
+                <td>
+                    <div ng-if="rule.fieldType"
+                         ng-include="'app/administration/notifications/filters/' + rule.fieldType + '.html'">
+                    </div>
+                </td>
+                <td>
+                    <a href
+                       class="link-btn text-default tms-btn-remove"
+                       ng-click="vm.removeRule(rule)">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="form-group text-left">
+            <button type="button"
+                    class="btn btn-default tms-btn-add"
+                    ng-click="vm.addRule()">
+                <i class="fa fa-plus-circle"></i>
+                Add Rule
+            </button>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Recipients
+            <tip-marker tip="Enter recipient email addresses separated by space."></tip-marker>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="input-group">
+            <tags-input ng-model="vm.recipients" display-property="email" key-property="email"
+                        type="email" placeholder="Add e-mail address" add-on-space="true"
+                        allowed-tags-pattern="{{vm.emailRegex}}"
+                        on-tag-added="vm.addRecipient($tag)"
+                        on-tag-removed="vm.removeRecipient($tag)">
+            </tags-input>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "$group": {
+    "_id": {
+      "dropName": "$_id.dropName",
+      "isoVersion": "$_id.isoVersion"
+    },
+    "dropName": { "$first": "$_id.dropName"},
+    "isoVersion": { "$first": "$_id.isoVersion"},
+    "data": {
+      "$push": {
+        "groupBy": "$_id.tag",
+        "passRate": "$passRate"
+      }
+    }
+  }
+}

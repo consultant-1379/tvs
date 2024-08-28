@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{vm.title}}
+            <tip-marker ng-if="vm.tip" tip="{{vm.tip}}"></tip-marker>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="i in vm.createArrayOfLength(vm.colCount) track by $index" class="{{vm.getColumnClass()}}">
+                <dl class="dl-rows ellipsis-overflow">
+                    <dt class="{{vm.getTmsPropKeyClass(field.key)}}"
+                        ng-repeat-start="field in vm.getFieldsForColumn($index) track by field.key">
+                        {{field.name || (field.key | _:'startCase')}}</dt>
+                    <dd class="{{vm.getTmsPropValueClass(field.key)}}" ng-repeat-end>
+                        <span ng-bind-html="field.value | prettify | picker:field.filter | orElse:'N/A'"></span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

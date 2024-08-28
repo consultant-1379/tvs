@@ -1,0 +1,15 @@
+{
+  "$project": {
+    "testCaseCount": 1,
+    "lastExecutionDate": 1,
+    "testSuiteCount": 1,
+    "passRate": {
+      "$multiply": [
+        {
+          "$cond": [ { "$eq": [ "$testCaseCount", 0 ] }, 0, {"$divide":["$passedTestCaseCount", "$testCaseCount"]} ]
+        },
+        100
+      ]
+    }
+  }
+}

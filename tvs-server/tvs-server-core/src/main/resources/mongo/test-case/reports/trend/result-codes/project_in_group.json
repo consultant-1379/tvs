@@ -1,0 +1,7 @@
+{
+  "$project": {
+    "_id": 1,
+    "hasResultCode": { $gt: [{$size: {$setIntersection: ["$resultCode", #]}}, 0]},
+    "passRate": 1
+  }
+}

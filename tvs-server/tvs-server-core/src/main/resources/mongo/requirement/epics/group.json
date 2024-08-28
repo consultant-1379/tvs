@@ -1,0 +1,39 @@
+{
+  "$group": {
+    "_id": null,
+    "userStoryCount": {
+      "$sum": 1
+    },
+    "testCaseCount": {
+      "$sum": "$testCaseCount"
+    },
+    "usWithTestResults": {
+      "$sum": {
+        "$cond": [
+          {
+            "$gt": [
+              "$testCaseCount",
+              0
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    },
+    "usWithFullPass": {
+      "$sum": {
+        "$cond": [
+          {
+            "$eq": [
+              "$passRate",
+              100
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    }
+  }
+}

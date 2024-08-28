@@ -1,0 +1,141 @@
+<div class="tms-test-flakiness">
+
+    <form name="datepickerForm" class="form-inline">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Report settings</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group" ng-class="{'has-error': datepickerForm.dateFrom.$invalid}">
+                    <label><i class="fa fa-calendar"></i> From</label>
+                    <input type="text"
+                           name="dateFrom"
+                           class="form-control"
+                           ng-model="vm.fromDate"
+                           ng-change="vm.onFilterChanged()"
+                           data-max-date="{{vm.toDate}}"
+                           data-date-type="string"
+                           data-model-date-format="yyyy-MM-ddTHH:mm:ss"
+                           data-autoclose="1"
+                           placeholder="From"
+                           bs-datepicker>
+                </div>
+                <div class="form-group" ng-class="{'has-error': datepickerForm.dateTo.$invalid}">
+                    <label><i class="fa fa-calendar"></i> To</label>
+                    <input type="text"
+                           name="dateTo"
+                           class="form-control"
+                           ng-model="vm.toDate"
+                           ng-change="vm.onFilterChanged()"
+                           data-min-date="{{vm.fromDate}}"
+                           data-max-date="today"
+                           data-date-type="string"
+                           data-model-date-format="yyyy-MM-ddTHH:mm:ss"
+                           data-autoclose="1"
+                           placeholder="To"
+                           bs-datepicker>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <p ng-if="!vm.report" class="text-muted">
+        <span>Loading...</span>
+    </p>
+    <p ng-if="vm.report"
+       class="tms-test-flakiness-summary text-muted">
+        <span ng-if="vm.report.testCases.length > 0">
+            Showing results for {{vm.report.testCases.length}} flaky test cases
+            in {{vm.report.sessions.length}} latest sessions
+        </span>
+        <span ng-if="vm.report.testCases.length == 0">
+            No data available for report
+        </span>
+        <csv-export class="pull-right"
+                    link="/jobs/{{vm.job.id}}/test-flakiness/csv?startTime={{vm.time.start}}&endTime={{vm.time.stop}}">
+        </csv-export>
+    </p>
+
+    <div class="panel panel-default" ng-if="vm.report.testCases.length">
+        <div class="panel-body">
+            <div class="tms-test-flakiness-report">
+                <table class="tms-test-flakiness-table table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Test Case ID</th>
+                            <th>Suites</th>
+                            <th>Components</th>
+                            <th>Total Executions</th>
+                            <th>Flakiness</th>
+                            <th>Slowest</th>
+                            <th class="tms-test-flakiness-session"
+                                ng-repeat="session in vm.report.sessions">
+                                <div>{{session.time.startDate | tmsDate}}</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="testCase in vm.report.testCases track by testCase.id">
+                            <th class="tms-test-flakiness-id">
+                                <div class="ellipsis-overflow" style="width: 200px">
+                                    <div title="{{testCase.id}}">
+                                        {{testCase.testCaseId}}
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="tms-test-flakiness-name">
+                                <div class="ellipsis-overflow" style="width: 200px">
+                                    <a title="{{testCase.id}}" endpoint-href="namTestCase(testCase.name)">
+                                        {{testCase.name}}
+                                    </a>
+                                </div>
+                            </th>
+                            <th class="tms-test-flakiness-suites">
+                                <div class="ellipsis-overflow" style="width: 200px">
+                                    <div title="{{testCase.suites.join(', ')}}">
+                                        {{testCase.suites.join(', ')}}
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="tms-test-flakiness-components">
+                                <div class="ellipsis-overflow" style="width: 200px">
+                                    <div title="{{testCase.components.join(', ')}}">
+                                        {{testCase.components.join(', ')}}
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="tms-test-flakiness-execution-count">
+                                <div class="ellipsis-overflow">
+                                    <a title="View all executions of this test case for this test activity for the date range specified"
+                                       ng-click="vm.navigateToTestSessions(testCase)">
+                                        {{vm.getExecutionCount(testCase.latestResults)}}
+                                    </a>
+                                </div>
+                            </th>
+                            <th class="tms-test-flakiness-value">
+                                {{testCase.flakiness || ''}}<span ng-if="testCase.flakiness">%</span>
+                            </th>
+                            <th class="tms-test-flakiness-duration">
+                                {{testCase.longestDuration | tmsDuration:'short'}}
+                            </th>
+                            <td ng-repeat="session in vm.report.sessions"
+                                ng-init="result = testCase.latestResults[session.id]"
+                                class="tms-test-flakiness-result"
+                                data-status="{{result.resultCode}}"
+                                ng-class="{'tms-test-duration-fast': result.time.duration < 1000}">
+                                <span bs-tooltip
+                                      data-title="{{vm.getTooltipText(result)}}"
+                                      data-html="true"
+                                      data-placement="top">
+                                    {{result.time.duration | tmsDuration:'short'}}
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

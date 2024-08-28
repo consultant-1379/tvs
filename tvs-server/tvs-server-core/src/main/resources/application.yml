@@ -1,0 +1,44 @@
+# http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-application-properties
+spring:
+    profiles.active: test
+    banner-mode: "off"
+    jackson:
+        date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+        time-zone: UTC
+
+application.name: NAM.TVS
+jersey.app.name: NAM Test Verdict Service
+
+server.port: 8084
+endpoints.jmx.unique-names: true
+
+schedule.aggregate.requirement.cron: 0 0 * * * *
+
+ldap.url: ldap://127.0.0.1:33389/dc=springframework,dc=org
+
+hosts:
+    gtms: gtms-web
+    mongodb: mongodb
+gtms:
+    tce.url: http://${hosts.gtms}/api/tce/
+
+mongodb:
+    embedded.start: true
+    embedded.port: 27017
+    path: ${user.home}/.gtms/mongo
+    database: trs
+
+spring.mail:
+    protocol: smtp
+    host: localhost
+    port: 25
+    properties:
+        mail:
+            from: test-reporting.no-reply@ericsson.com
+            smtp:
+                auth: false
+                starttls.enable: false
+    username:
+    password:
+
+logging.config: classpath:logback.xml

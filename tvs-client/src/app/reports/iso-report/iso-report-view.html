@@ -1,0 +1,104 @@
+<toolbar>
+    <div class="form-inline">
+        <div class="btn-group">
+            <button class="btn btn-default tms-btn-select-context"
+                    type="button" ng-click="vm.selectContext()">
+                {{vm.context ? 'Context: ' + vm.context.name : 'Select context'}}
+            </button>
+        </div>
+    </div>
+</toolbar>
+
+<div class="panel panel-default tms-iso-report-panel">
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label style="margin-bottom: 0">Test Activities:</label>
+                    <tip-marker tip="Select Activities to filter by.">
+                    </tip-marker>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default tms-btn-iso-version"
+                            ng-model="vm.enabledActivityLabels"
+                            ng-change="vm.onFilterChanged()"
+                            data-placeholder="Select labels"
+                            data-multiple="1"
+                            bs-options="activity as activity for activity in vm.activityLabels"
+                            all-none-buttons="true"
+                            bs-select>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Report type:</label>
+            <tip-marker tip="Select grouping type - by priority, component or group fields in a test case data.
+                    Chart data can be deselected using colored control elements.">
+            </tip-marker>
+            <button class="btn btn-default tms-btn-iso-report-type"
+                    ng-model="vm.selectedReportType"
+                    ng-change="vm.onFilterChanged()"
+                    bs-options="type as type.value for type in vm.reportTypes"
+                    bs-select>
+            </button>
+        </div>
+        <div class="form-group">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label style="margin-bottom: 0">ISO:</label>
+                    <tip-marker tip="Select version for a report.">
+                    </tip-marker>
+                </div>
+                <div class="form-group">
+                    <ui-select ng-model="vm.selectedIso" ng-change="vm.onFilterChanged()">
+                        <ui-select-match placeholder="Select ISO version">
+                            <span style="padding-right: 10px">{{$select.selected}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="iso in vm.iso | filter: $select.search">
+                            <span>{{iso}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label style="margin-bottom: 0">{{vm.selectedReportType.value}}:</label>
+                    <tip-marker tip="Select data to shown in a chart.">
+                    </tip-marker>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default tms-btn-iso-version"
+                            ng-model="vm.enabledLabels"
+                            ng-change="vm.configureChartData(vm.rawData)"
+                            data-placeholder="Select labels"
+                            data-multiple="1"
+                            bs-options="label as label for label in vm.allLabels"
+                            bs-select>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nvd3 ng-if="!vm.hideChart()" options="vm.chartOptions"
+              data="vm.chartData"
+              config="{deepWatchData: true, refreshDataOnly: false}">
+        </nvd3>
+    </div>
+
+    <div ng-hide="vm.hideTable()">
+        <tms-grid
+                heading="Test Runs by {{vm.selectedReportType.value}}"
+                pagination-template="app/common/pagination/no-pagination.html"
+                fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+                row-click="vm.navigate(row)"
+                compute-columns="vm.computeColumns(data, meta)"
+                control-object="vm.tableControlObject"
+                storage-key-fn="vm.getStorageKey()">
+            <csv-export
+                link="/contexts/{{vm.context.id}}/reports/iso/csv?reportType={{vm.selectedReportType.key}}&iso={{vm.selectedIso}}&jobNames={{vm.jobNamesForFilter}}">
+            </csv-export>
+        </tms-grid>
+    </div>
+</div>

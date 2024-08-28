@@ -1,0 +1,21 @@
+{
+  "$group": {
+    "_id": "$name",
+    "name": {"$first" : "$name"},
+    "testCaseId": {"$first": "$testCaseId"},
+    "results": {
+      "$push": {
+        "testCaseId": "$testCaseId",
+        "executionId": "$executionId",
+        "resultCode": "$resultCode",
+        "time": "$time"
+      }
+    },
+    "suites": {
+      "$addToSet": "$testSuiteName"
+    },
+    "components": {
+      "$addToSet": "$COMPONENTS"
+    }
+  }
+}

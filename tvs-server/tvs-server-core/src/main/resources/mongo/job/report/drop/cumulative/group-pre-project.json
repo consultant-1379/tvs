@@ -1,0 +1,26 @@
+{
+  "$group": {
+  "_id": "$_id.dropName",
+  "testCaseCount": {"$sum": "$testCaseCount"},
+  "iso": {"$last": "$iso"},
+  "date": {"$last": "$date"},
+  "passedTestCaseCount": {
+    "$sum": {
+      "$cond": [
+        {"$or": [{"$eq": ["$resultCode","PASSED"]}, {"$eq": ["$resultCode","SUCCESS"]}]},
+        1,
+        0
+      ]
+    }
+  },
+  "failedTestCaseCount": {
+    "$sum": {
+      "$cond": [
+        {"$or": [{"$eq": ["$resultCode","FAILED"]}, {"$eq": ["$resultCode","FAILURE"]}]},
+        1,
+        0
+      ]
+    }
+  }
+}
+}

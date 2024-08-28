@@ -1,0 +1,11 @@
+<ui-select ng-model="row.contextNode"
+           class="tms-btn-change-context"
+           on-select="col.additional.onSelect(row, $select.selected)">
+    <ui-select-match class="ui-select-match" placeholder="Select or type to search...">
+        {{$select.selected.name}}
+    </ui-select-match>
+    <ui-select-choices class="ui-select-choices"
+                       repeat="item as item in col.additional.items() | filter: $select.search">
+        {{item.name}}
+    </ui-select-choices>
+</ui-select>

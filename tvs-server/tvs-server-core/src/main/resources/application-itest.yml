@@ -1,0 +1,11 @@
+spring:
+    profiles: itest
+    profiles.include: development
+
+mongodb.database: itest-tvs
+
+ldap:
+    dnPattern: uid={0},ou=people
+    dnPatternExternal: uid={0},ou=external
+
+spring.mail.port: 3025

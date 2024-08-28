@@ -1,0 +1,16 @@
+{
+  "$group": {
+    "_id": {
+      "tag": "$_id.tag"
+    },
+    "tag": { "$first": "$_id.tag" },
+    "hasResultCode": { $addToSet: "$hasResultCode" },
+
+    "data": {
+      "$push": {
+        "dropName": "$_id.dropName",
+        "isoVersion": "$_id.isoVersion",
+        "passRate": "$passRate"}
+    }
+  }
+}

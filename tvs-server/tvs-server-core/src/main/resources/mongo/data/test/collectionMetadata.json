@@ -1,0 +1,18 @@
+[
+  {
+    "name": "job",
+    "keys": ["id", "name", "context", "modifiedDate", "testSessionCount", "lastTestSessionTestSuiteCount", "lastTestSessionTestCaseCount", "lastExecutionDate", "lastTestSessionDuration", "avgTestSessionDuration"]
+  },
+  {
+    "name": "testSession",
+    "keys": ["id", "time.startDate", "time.stopDate", "time.duration", "uri", "logReferences", "resultCode", "testCaseCount", "lastExecutionDate", "testSuiteCount", "passRate", "modifiedDate", "createdDate"]
+  },
+  {
+    "name": "testSuiteResult",
+    "keys": ["id", "time.startDate", "time.stopDate", "time.duration", "statistics.total", "statistics.passed", "statistics.pending", "statistics.cancelled", "statistics.failed", "statistics.broken", "passRate", "modifiedDate", "createdDate"]
+  },
+  {
+    "name": "testCaseResult",
+    "keys": ["id", "name", "time.startDate", "time.stopDate", "time.duration", "resultCode", "modifiedDate", "createdDate"]
+  }
+]

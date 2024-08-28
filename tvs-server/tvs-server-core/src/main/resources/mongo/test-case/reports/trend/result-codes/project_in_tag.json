@@ -1,0 +1,8 @@
+{
+  "$project": {
+    "_id" : 1,
+    "tag" : 1,
+    "hasResultCode" : { $allElementsTrue: ["$hasResultCode"] },
+    "data" : 1
+  }
+}

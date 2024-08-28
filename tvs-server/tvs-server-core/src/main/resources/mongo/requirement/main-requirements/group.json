@@ -1,0 +1,45 @@
+{
+  "$group": {
+    "_id": null,
+    "epicCount": {
+      "$sum": 1
+    },
+    "userStoryCount": {
+      "$sum": "$userStoryCount"
+    },
+    "usWithTestResults": {
+      "$sum": "$usWithTestResults"
+    },
+    "testCaseCount": {
+      "$sum": "$testCaseCount"
+    },
+    "epicWithTestResults": {
+      "$sum": {
+        "$cond": [
+          {
+            "$gt": [
+              "$usWithTestResults",
+              0
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    },
+    "epicWithFullPass": {
+      "$sum": {
+        "$cond": [
+          {
+            "$eq": [
+              "$SOV",
+              100
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    }
+  }
+}

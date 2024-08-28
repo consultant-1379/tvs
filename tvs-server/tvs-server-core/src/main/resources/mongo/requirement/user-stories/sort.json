@@ -1,0 +1,5 @@
+{
+  "$sort": {
+    "time.startDate": -1
+  }
+}

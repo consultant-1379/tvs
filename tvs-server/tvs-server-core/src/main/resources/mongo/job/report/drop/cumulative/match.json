@@ -1,0 +1,35 @@
+{
+  "$match": {
+    "$and": [
+      {
+        "jobId": #
+      },
+      {
+        "time.startDate": {
+            "$gte": #,
+            "$lte": #
+        }
+      },
+      {
+        "time.stopDate": {
+          "$ne": null
+        }
+      },
+      {
+        "DROP_NAME": {
+          "$ne": null
+        }
+      },
+      {
+        "resultCode": {
+          "$ne": "NOT_STARTED"
+        }
+      },
+      {
+        "ignored": {
+          "$ne": true
+        }
+      }
+    ]
+  }
+}

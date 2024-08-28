@@ -1,0 +1,19 @@
+{
+  "$project": {
+    "PRIORITY": "$PRIORITY",
+    "GROUPS": "$GROUPS",
+    "COMPONENTS": "$COMPONENTS",
+    "passed": {
+      "$cond": [{"$eq": ["$resultCode", "PASSED"]}, 1, 0]
+    },
+    "cancelled": {
+      "$cond": [{"$eq": ["$resultCode", "CANCELLED"]}, 1, 0]
+    },
+    "failed": {
+      "$cond": [{"$eq": ["$resultCode", "FAILED"]}, 1, 0]
+    },
+    "broken": {
+      "$cond": [{"$eq": ["$resultCode", "BROKEN"]}, 1, 0]
+    }
+  }
+}

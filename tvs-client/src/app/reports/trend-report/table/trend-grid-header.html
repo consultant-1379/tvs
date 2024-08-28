@@ -1,0 +1,32 @@
+<tr>
+    <th class="text-right">Drop</th>
+    <th ng-repeat="(drop, versions) in $columns[0].additional.vm.getSelectedDropIsoMap($columns)"
+        colspan="{{versions.length}}"
+        class="text-center"><div>{{ drop }}</div>
+    </th>
+    <th colspan="2"/>
+</tr>
+<tr>
+    <th title="{{$column.headerTitle(this)}}" ng-repeat="$column in $columns | orderBy:'position'"
+        ng-if="$column.show(this)"
+        ng-init="template=$column.headerTemplateURL(this)" class="header {{$column.class(this)}}">
+        <div ng-if="!template" ng-if="!template" class="ng-table-header"
+             ng-class="{'grid-labels': $first}"
+             data-title="{{$column.title(this)}}"
+             data-delay="300,0"
+             bs-tooltip>
+            <span
+                ng-bind="$column.title(this)"></span>
+        </div>
+        <div ng-if="template" ng-if="template" ng-include="template"></div>
+    </th>
+</tr>
+<tr ng-if="show_filter" class="ng-table-filters">
+    <th data-title-text="{{$column.titleAlt(this) || $column.title(this)}}"
+        ng-repeat="$column in $columns | orderBy:'position'" ng-if="$column.show(this)" class="filter">
+        <div ng-repeat="(name, filter) in $column.filter(this)">
+            <div ng-if="filter.indexOf('/') !==-1" ng-include="filter"></div>
+            <div ng-if="filter.indexOf('/')===-1" ng-include="'ng-table/filters/' + filter + '.html'"></div>
+        </div>
+    </th>
+</tr>

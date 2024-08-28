@@ -1,0 +1,9 @@
+<div class="input-group">
+    <input type="text" class="form-control"
+           ng-model="rule.value"
+           ng-change="vm.updateRule(rule)"
+           ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+           data-date-type="string" data-model-date-format="yyyy-MM-ddTHH:mm:ss"
+           data-timezone="UTC"
+           data-autoclose="1" bs-datepicker>
+</div>

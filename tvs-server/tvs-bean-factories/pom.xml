@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericsson.gic.tms</groupId>
+        <artifactId>tvs-server</artifactId>
+        <version>3.3.79-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>tvs-bean-factories</artifactId>
+    <packaging>jar</packaging>
+    <name>TMS Test Verdict Service Server Bean Factories</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.gic.tms</groupId>
+            <artifactId>tvs-server-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.gic.tms</groupId>
+            <artifactId>tms-common</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

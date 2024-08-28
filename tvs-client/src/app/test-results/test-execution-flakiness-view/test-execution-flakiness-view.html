@@ -1,0 +1,36 @@
+<div class="tms-test-case-result-history">
+
+    <toolbar>
+        <div class="btn-group"
+             bs-tooltip
+             data-placement="bottom">
+            <button type="button"
+                    class="btn btn-default tms-btn-details"
+                    ng-click="vm.navigateToTestCaseDetails(vm.testCaseId)">
+                <i class="fa fa-external-link"></i>
+                Test Case Details
+            </button>
+            <tip-marker tip="Opens test case in Test Case Management System."></tip-marker>
+        </div>
+    </toolbar>
+
+    <object-portlet tip="All information about selected test campaign or automated job."
+                    source="vm.portletJob" title="Test Activity Info" col-count="3" field-config="vm.portletFields"
+                    class="tms-job">
+    </object-portlet>
+
+    <object-portlet tip="All information about the Flakiness of the selected Test Case within the selected Test Activity."
+                    source="vm.portletFlakiness" title="Test Flakiness Info" col-count="3" field-config="vm.portletFlakinessFields"
+                    class="tms-job">
+    </object-portlet>
+
+    <tms-grid
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        on-page-changed="vm.onPageChanged(page)"
+        storage-key-fn="vm.getStorageKey()"
+        statuses="vm.statusService.getStatuses()">
+    </tms-grid>
+
+</div>

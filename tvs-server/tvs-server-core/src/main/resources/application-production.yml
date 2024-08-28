@@ -1,0 +1,31 @@
+spring:
+    profiles: production
+    data:
+        mongodb:
+            uri: mongodb://${mongodb.user}:${mongodb.password}@${mongodb.host.first},${mongodb.host.second}/${mongodb.database}
+            database: ${mongodb.database}
+
+jersey.app.monitoring.enabled: true
+jersey.app.request.verbose.logging: true
+
+hosts:
+    mongodb: mongodb
+
+mongodb:
+    user:       trs
+    password:   IDiMb5e0u8kC1F7
+    host:
+        first:  trs-mongo-1590-p.seli.gic.ericsson.se:27037
+        second: trs-mongo-1590-s.seli.gic.ericsson.se:27037
+
+ldap:
+    url: ldap://ldap-egad.internal.ericsson.com:3268
+    user: attafegad@ericsson.se
+    password: fReSWuQ4p6uxabeQ
+    search.base: OU=ID,OU=Data,dc=ericsson,DC=se
+    dnPattern: CN={0},OU=CA,OU=User,OU=P001,OU=ID,OU=Data,dc=ericsson,DC=se
+    dnPatternExternal: CN={0},OU=External,OU=P017,OU=ID,OU=Data,dc=ericsson,DC=se
+
+spring.mail.host: smtp.internal.ericsson.com
+
+logging.config: classpath:logback-testing.xml

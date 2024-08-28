@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.gic.tms</groupId>
+        <artifactId>tms-parent</artifactId>
+        <version>3.3.23</version>
+    </parent>
+
+    <artifactId>tvs</artifactId>
+    <packaging>pom</packaging>
+    <name>TMS Test Verdict Service</name>
+    <version>3.3.79-SNAPSHOT</version>
+
+    <developers>
+        <developer>
+            <id>erodunn</id>
+            <name>Robert Dunne</name>
+            <email>robert.dunne@ericsson.com</email>
+            <roles>
+                <role>Code Guardians</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <common.version>3.3.23</common.version>
+        <tce.version>2.1.39</tce.version>
+        <joda.version>2.9.9</joda.version>
+    </properties>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Releases</name>
+            <url>https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots</name>
+            <url>https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-bom</artifactId>
+                <version>${common.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-node</artifactId>
+                <version>${common.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-json-api</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-jersey-client</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-jersey</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-infrastructure-core</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tms-infrastructure-itest</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ericsson.gic.tms</groupId>
+                <artifactId>tce-server-api</artifactId>
+                <version>${tce.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>all</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>tvs-server</module>
+                <module>tvs-client</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>no-client</id>
+            <modules>
+                <module>tvs-server</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.commonjava.maven.plugins</groupId>
+                    <artifactId>directory-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>basedir</id>
+                            <goals>
+                                <goal>directory-of</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <property>workspace.basedir</property>
+                                <project>
+                                    <groupId>com.ericsson.gic.tms</groupId>
+                                    <artifactId>tvs</artifactId>
+                                </project>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.commonjava.maven.plugins</groupId>
+                <artifactId>directory-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

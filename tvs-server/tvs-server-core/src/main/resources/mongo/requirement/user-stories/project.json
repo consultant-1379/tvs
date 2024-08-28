@@ -1,0 +1,18 @@
+{
+  "$project": {
+    "testCaseCount": 1,
+    "passedTestCaseCount": 1,
+    "failedTestCaseCount": 1,
+    "passRate": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$passedTestCaseCount",
+            "$testCaseCount"
+          ]
+        },
+        100
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="tms-test-session">
+    <object-portlet tip="All information about selected test campaign or automated job."
+                    source="vm.portletJob"
+                    title="Test Activity Info"
+                    col-count="3"
+                    field-config="vm.portletJobFields"
+                    class="tms-job"></object-portlet>
+
+    <object-portlet tip="All information about selected test session."
+                    source="vm.portletTestSession"
+                    title="Test Session Info"
+                    col-count="3"
+                    field-config="vm.portletFields"
+                    class="tms-test-session"></object-portlet>
+    <tms-grid
+        heading="Test Suite Results"
+        heading-tip="Grid shows detailed information about test suites in the selected test session.
+            Data in a grid can be reordered or filtered by columns."
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        row-click="vm.navigateToSuiteResult(row)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        storage-key-fn="vm.getStorageKey()">
+        <csv-export
+            button-text="Export Test Case Results to CSV"
+            tip="Download all Test Case details of this Test Session as CSV file."
+            link="/jobs/{{vm.jobId}}/test-sessions/{{vm.executionId}}/test-case-results">
+        </csv-export>
+    </tms-grid>
+</div>

@@ -1,0 +1,35 @@
+{
+  "$group": {
+    "_id": "$testSessionId",
+    "testSessionId": {
+      "$first": "$testSessionId"
+    },
+    "isoVersion": {
+      "$first": "$ISO_VERSION"
+    },
+    "isoVersionPadded": {
+      "$first": "$ISO_VERSION_PADDED"
+    },
+    "dropName": {
+      "$first": "$DROP_NAME"
+    },
+    "total": {
+      "$sum": "$statistics.total"
+    },
+    "passed": {
+      "$sum": "$statistics.passed"
+    },
+    "cancelled": {
+      "$sum": "$statistics.cancelled"
+    },
+    "failed": {
+      "$sum": "$statistics.failed"
+    },
+    "broken": {
+      "$sum": "$statistics.broken"
+    },
+    "time": {
+      "$last": "$time.stopDate"
+    }
+  }
+}

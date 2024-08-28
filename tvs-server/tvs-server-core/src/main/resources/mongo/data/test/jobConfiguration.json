@@ -1,0 +1,184 @@
+[
+  {
+    "_id" : "",
+    "jobName": "^RFA_Job$",
+    "source": "ENM",
+    "contextId": "55d4b2ac-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 100
+  },
+  {
+    "_id" : "",
+    "jobName": ".*_RFA_250$",
+    "source": "ENM",
+    "contextId": "55d4b2ac-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Deploy.*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4bdd8-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": ".*(?i)ERICPol(?-i).*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4bf7c-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^AP[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4b4d2-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^CM[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4b5d6-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^FM[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4b6a8-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^PM[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4b770-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^CM[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4b82e-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Auto[_-]?Provisioning.*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4bcd4-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^ENMeshed[_-]?Security[_-]?Tribe[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4beaa-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": ".*(?i)ERICPol(?-i).*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4bf7c-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Insert[_-]?Name[_-]?Here[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c0ee-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^KVM[-_]?Physical[-_]?Rollout[_-]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c1ac-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Key[-_]?Components.*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c562-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Legolas[-_]?Key[-_]?Components.*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c634-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Maintrack[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c6f2-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Monitoring[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c7b0-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Oceans[-_]?Deployment.*[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c882-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^SHM[-_]Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4c940-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Security[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4ca4e-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^SkyFall[-_]?Security[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4cddc-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^TEI[-_]?Security[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4ceae-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Transport[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4cf6c-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^UTF[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4d02a-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  },
+  {
+    "_id" : "",
+    "jobName": "^Whitestar[-_]?RV[-_]?Tribe[-_]?[0-9]+_KGB.*",
+    "source": "ENM",
+    "contextId": "55d4d0e8-e9e1-11e5-9ce9-5e5517507c66",
+    "priority": 90
+  }
+]

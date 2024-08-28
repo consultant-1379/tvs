@@ -1,0 +1,68 @@
+<div ng-if="vm.tableParams">
+    <div class="panel panel-default panel-sm tms-panel-grid-buttons">
+        <div class="panel-body clearfix">
+            <div ng-if="vm.heading"
+                 class="tms-grid-heading pull-left">
+                {{vm.heading}}
+                <tip-marker ng-if="vm.headingTip" tip="{{vm.headingTip}}"></tip-marker>
+            </div>
+            <div class="tms-grid-toolbar pull-right">
+                <span>
+                    <span ng-transclude></span>
+                    <button class="btn btn-default tms-btn-clear-filters"
+                            ng-if="vm.isFiltersEnabled()"
+                            ng-disabled="vm.disableClearFilterBtn()"
+                            ng-click="vm.clearFilter()">Clear filters
+                    </button>
+                    <tip-marker ng-if="vm.isFiltersEnabled()" tip="Clears all user set filters."></tip-marker>
+                    <span class="tms-grid-toolbar-column-selector">
+                        <button class="btn btn-default"
+                                data-multiple="1"
+                                data-container=".tms-grid-toolbar-column-selector"
+                                data-placeholder="Select Columns..."
+                                data-max-length-html="selected columns"
+                                data-placement="bottom-right"
+                                ng-model="vm.selectedColumns"
+                                bs-options="col.title as col.title for col in vm.columns"
+                                bs-select>
+                        </button>
+                    </span>
+                    <tip-marker tip="Select columns to show on grid."></tip-marker>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <loading-wrapper>
+        <div class="tms-trend-report-grid-scroll">
+            <table ng-table-dynamic="vm.tableParams with vm.columns"
+                   template-pagination="{{vm.paginationTemplate}}"
+                   template-header="app/reports/trend-report/table/trend-grid-header.html"
+                   class="table tms-tbl-grid tms-trend-report-grid"
+                   show-filter="vm.isFiltersEnabled()">
+                <colgroup>
+                    <col ng-if="col.show(this)" ng-repeat="col in $columns" ng-style="{width: col.width}">
+                </colgroup>
+                <tbody>
+                <tr ng-repeat="row in $data"
+                    ng-click="vm.onRowClick(row)"
+                    class="tms-btn-row pointer"
+                    data-tms-id="{{row[vm.idField]}}">
+                    <td ng-repeat="col in $columns"
+                        ng-class="col.formatFilter.getColor(vm.findProperty(row, col.field))">
+                        <span ng-if="col.type == 'default'" class="grid-labels">
+                            {{vm.findProperty(row, col.field) | prettify}}
+                        </span>
+                        <span ng-if="col.type == 'rate'" class="grid-cells">
+                            {{vm.findProperty(row, col.field) | picker:col.formatFilter.formatPercent}}
+                        </span>
+                        <span ng-if="col.type == 'number'" class="grid-cells">
+                            {{vm.findProperty(row, col.field) | prettify}}
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </loading-wrapper>
+</div>

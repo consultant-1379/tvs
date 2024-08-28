@@ -1,0 +1,45 @@
+# Maven
+target/
+*.versionsBackup
+
+# Development
+node_modules/
+bower_components/
+.tmp/
+npm-debug.log
+data/elasticsearch
+
+# Work litter
+.classpath
+.idea
+.lnk
+.nbattrs
+.project
+.settings
+.DS_Store
+*~
+*.bak
+*.class
+*.hi
+*.iml
+*.ipr
+*.iws
+*.lock
+*.log
+*.o
+*.out
+*.sublime-project
+*.sublime-workspace
+*.swo
+*.swp
+*.tmproj
+*.lnk
+dump.*.db
+Thumbs.db
+worskpace.xml
+atlassian-ide-plugin.xml
+
+# Test
+testReporting/
+test-output/
+/*.png

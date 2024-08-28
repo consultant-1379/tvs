@@ -1,0 +1,10 @@
+<div class="input-group">
+    <input type="text" class="form-control" size="7"
+           ng-model="rule.value"
+           ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+           ng-change="vm.updateRule(rule)"
+           data-time-format="HH:mm:ss"
+           data-timezone="UTC"
+           data-time-type="number" data-autoclose="1"
+           bs-timepicker>
+</div>

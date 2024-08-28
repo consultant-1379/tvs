@@ -1,0 +1,10 @@
+{
+  "$group": {
+    "_id": {
+      "dropName": "$data.dropName",
+      "isoVersion": "$data.isoVersion",
+      "tag": "$tag"
+    },
+    "passRate": { "$first": "$data.passRate"}
+  }
+}

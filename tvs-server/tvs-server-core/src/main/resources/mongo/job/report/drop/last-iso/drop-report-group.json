@@ -1,0 +1,28 @@
+{
+  "$group": {
+    "_id": {
+      "DROP_NAME": "$DROP_NAME"
+    },
+    "dropName": {
+      "$last": "$DROP_NAME"
+    },
+    "latestIsoVersion": {
+      "$last": "$ISO_VERSION"
+    },
+    "passRate": {
+      "$last": "$passRate"
+    },
+    "testCasesCount": {
+      "$last": "$testCaseCount"
+    },
+    "testSuitesCount": {
+      "$last": "$testSuiteCount"
+    },
+    "testSessionsCount": {
+      "$sum": 1
+    },
+    "isoLastStartTime": {
+      "$last": "$time.startDate"
+    }
+  }
+}

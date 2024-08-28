@@ -1,0 +1,62 @@
+[
+  { "_id": "DURACI",
+    "name": "DURA CI",
+    "type": "PROJECT",
+    "contextId": "systemId-1",
+    "children": [ "MR1", "MR2", "US24" ]
+  },
+  { "_id": "TORF",
+    "name": "TOR Project",
+    "type": "PROJECT",
+    "contextId": "systemId-1",
+    "children": [ ]
+  },
+  { "_id": "MR1",
+    "name": "Treat as support in ENM",
+    "type": "MR",
+    "contextId": "systemId-1",
+    "children": [ "EPIC1", "EPIC2" ]
+  },
+  { "_id": "EPIC1",
+    "name": "Epic as support in ENM",
+    "type": "EPIC",
+    "contextId": "systemId-1",
+    "children": [ "US1", "US2" ]
+  },
+  { "_id": "EPIC2",
+    "name": "Treat As for CM CPP",
+    "type": "EPIC",
+    "contextId": "systemId-1",
+    "children": [ "US3" ]
+  },
+  { "_id": "US1",
+    "name": "OSS target model",
+    "type": "STORY",
+    "contextId": "systemId-1",
+    "children": []
+  },
+  { "_id": "US2",
+    "name": "Verification of certificate",
+    "type": "STORY",
+    "contextId": "systemId-1",
+    "children": []
+  },
+  { "_id": "US3",
+    "name": "Model of OSS",
+    "type": "STORY",
+    "contextId": "systemId-1",
+    "children": []
+  },
+  { "_id": "US24",
+    "name": "Single Model of OSS",
+    "type": "STORY",
+    "contextId": "systemId-1",
+    "children": []
+  },
+  { "_id": "MR2",
+    "name": "Thread in TORF project",
+    "type": "MR",
+    "contextId": null,
+    "children": []
+  }
+]

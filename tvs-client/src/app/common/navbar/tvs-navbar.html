@@ -1,0 +1,45 @@
+<navbar>
+    <ul class="nav navbar-nav">
+        <li for-roles="viewDisabledServices">
+            <a endpoint-href="testCases()">Test Cases</a>
+        </li>
+        <li for-roles="viewDisabledServices">
+            <a endpoint-href="testActivities()">Test Activities</a>
+        </li>
+        <li for-tce-roles="contextAdmin,securityAdmin">
+            <a endpoint-href="administration()">Administration</a>
+        </li>
+        <li for-tce-roles="contextAdmin">
+            <a ui-sref="administration.jobs">Job Administration</a>
+        </li>
+        <li>
+            <a ui-sref="dashboard">Dashboard</a>
+        </li>
+        <li for-authenticated ui-sref-active="active">
+            <a ui-sref="jobs">
+                Results
+                <tip-marker tip="View test activities, on-line and historical test executions."></tip-marker>
+            </a>
+        </li>
+        <li for-authenticated ui-sref-active="active">
+            <a href class="dropdown-toggle"
+               bs-dropdown
+               data-template="app/common/navbar/reports/navbar-reports.html">
+                Reports
+                <span class="caret"></span>
+                <tip-marker
+                    tip="Group test results by priority, component or test group to see release coverage and trends.">
+                </tip-marker>
+            </a>
+        </li>
+        <li for-authenticated ui-sref-active="active">
+            <a ui-sref="mainRequirements">
+                Requirements
+                <tip-marker tip="View requirement coverage by executed tests."></tip-marker>
+            </a>
+        </li>
+        <li for-roles="viewDisabledServices">
+            <a endpoint-href="testCaseSelector()">Strategy Catalog</a>
+        </li>
+    </ul>
+</navbar>

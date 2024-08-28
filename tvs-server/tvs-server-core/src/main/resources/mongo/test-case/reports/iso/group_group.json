@@ -1,0 +1,11 @@
+{
+  "$group": {
+    "_id": "$GROUPS",
+    "group": { "$first": "$GROUPS" },
+    "total": { "$sum": 1 },
+    "passed": { "$sum": "$passed" },
+    "cancelled": { "$sum": "$cancelled" },
+    "failed": { "$sum": "$failed" },
+    "broken": { "$sum": "$broken" }
+  }
+}

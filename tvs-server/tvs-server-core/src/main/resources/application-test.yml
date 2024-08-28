@@ -1,0 +1,11 @@
+spring:
+    profiles: test
+    profiles.include: mongodb
+
+ldap:
+    dnPattern: uid={0},ou=people
+    dnPatternExternal: uid={0},ou=external
+
+spring.mail.port: 3025
+
+logging.config: classpath:logback-testing.xml

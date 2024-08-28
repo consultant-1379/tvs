@@ -1,0 +1,17 @@
+{
+  "$group": {
+    "_id": null,
+    "testCaseCount": {
+      "$sum": "$statistics.total"
+    },
+    "lastExecutionDate": {
+      "$last": "$time.startDate"
+    },
+    "testSuiteCount": {
+      "$sum": 1
+    },
+    "passedTestCaseCount": {
+      "$sum": "$statistics.passed"
+    }
+  }
+}

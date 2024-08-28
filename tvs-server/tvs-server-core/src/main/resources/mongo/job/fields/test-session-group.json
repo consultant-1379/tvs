@@ -1,0 +1,23 @@
+{
+  "$group": {
+    "_id": null,
+    "testSessionCount": {
+      "$sum": 1
+    },
+    "lastTestSessionTestSuiteCount": {
+      "$last": "$testSuiteCount"
+    },
+    "lastTestSessionTestCaseCount": {
+      "$last": "$testCaseCount"
+    },
+    "lastExecutionDate": {
+      "$last": "$time.startDate"
+    },
+    "lastTestSessionDuration": {
+      "$last": "$time.duration"
+    },
+    "avgTestSessionDuration": {
+      "$avg": "$time.duration"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$project": {
+    "dropName": "$_id",
+    "testCasesCount": "$testCaseCount",
+    "latestIsoVersion": "$iso",
+    "isoLastStartTime": "$date",
+    "passedTestCaseCount": 1,
+    "failedTestCaseCount": 1,
+    "passRate": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$passedTestCaseCount",
+            "$testCaseCount"
+          ]
+        },
+        100
+      ]
+    }
+  }
+}

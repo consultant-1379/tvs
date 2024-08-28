@@ -1,0 +1,11 @@
+{
+  "$project": {
+    "DROP_NAME": 1,
+    "ISO_VERSION": 1,
+    #: 1,
+    "resultCode" : 1,
+    "passed": {
+      "$cond": [{"$eq": ["$resultCode", "PASSED"]}, 1, 0]
+    }
+  }
+}

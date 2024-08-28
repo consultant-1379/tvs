@@ -1,0 +1,8 @@
+spring:
+    profiles: vagrant
+    profiles.include: mongodb
+
+server.contextPath: /tvs
+
+hosts:
+    gtms: 127.0.0.1:8080

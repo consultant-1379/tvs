@@ -1,0 +1,89 @@
+<div class="tms-test-suite-results">
+
+    <div class="row">
+        <div class="col-md-6">
+            <object-portlet tip="All information about selected test campaign or automated job."
+                            source="vm.portletJob" title="Test Activity Info" col-count="2" field-config="vm.jobFields"
+                            class="tms-job">
+            </object-portlet>
+        </div>
+        <div class="col-md-6">
+            <object-portlet tip=" All information about selected test session."
+                            source="vm.portletTestSession" title="Test Session Info" col-count="2"
+                            field-config="vm.testSessionFields" class="tms-test-session">
+            </object-portlet>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Test Suite Summary
+                <tip-marker tip="Summary of test suite results.
+                    The pie chart represents proportions of test case results and can be filtered.">
+                </tip-marker>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-1">
+                <dl class="tms-dl-normal">
+                    <dt>Total</dt>
+                    <dt>Passed</dt>
+                    <dt>Pending</dt>
+                    <dt>Cancelled</dt>
+                    <dt>Failed</dt>
+                    <dt>Broken</dt>
+                </dl>
+            </div>
+            <div class="col-md-1">
+                <dl>
+                    <dd><span class="tms-fld-total">{{vm.testSuiteResult.statistics.total}}</span></dd>
+                    <dd><span class="text-success tms-fld-passed">{{vm.testSuiteResult.statistics.passed}}</span></dd>
+                    <dd><span class="text-warning tms-fld-pending">{{vm.testSuiteResult.statistics.pending}}</span></dd>
+                    <dd><span class="text-muted tms-fld-cancelled">{{vm.testSuiteResult.statistics.cancelled}}</span>
+                    </dd>
+                    <dd><span class="text-danger tms-fld-failed">{{vm.testSuiteResult.statistics.failed}}</span></dd>
+                    <dd><span class="text-danger tms-fld-broken">{{vm.testSuiteResult.statistics.broken}}</span></dd>
+                </dl>
+            </div>
+            <div class="col-md-1">
+                <dl class="tms-dl-normal">
+                    <dt>Started</dt>
+                    <dt>Finished</dt>
+                    <dt>Duration</dt>
+                </dl>
+            </div>
+            <div class="col-md-2">
+                <dl>
+                    <dd class="tms-fld-start-date">{{vm.testSuiteResult.time.startDate | tmsDateTime}}</dd>
+                    <dd class="tms-fld-stop-date">{{vm.testSuiteResult.time.stopDate | tmsDateTime}}</dd>
+                    <dd>
+                        <strong class="tms-fld-duration">{{vm.testSuiteResult.time.duration | tmsDuration}}</strong>
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-6">
+                <nvd3 options="vm.chartOptions"
+                      data="vm.chartData"
+                      config="{deepWatchData: true, refreshDataOnly: false}">
+                </nvd3>
+            </div>
+        </div>
+    </div>
+
+    <tms-grid
+        heading="Test Case Results"
+        heading-tip="Grid shows all test case executions in the selected test suite.
+            Data in a grid can be reordered or filtered by columns."
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        row-click="vm.navigateToTestCaseExecutionHistory(row)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        storage-key-fn="vm.getStorageKey()"
+        statuses="vm.statusService.getStatuses()">
+        <csv-export
+            link="/jobs/{{vm.jobId}}/test-sessions/{{vm.executionId}}/test-suite-results/{{vm.testSuiteName}}/test-case-results/csv">
+        </csv-export>
+    </tms-grid>
+
+</div>

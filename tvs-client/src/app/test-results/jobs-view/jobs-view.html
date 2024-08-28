@@ -1,0 +1,23 @@
+<div class="tms-test-results">
+    <toolbar>
+        <div class="form-inline">
+            <div class="btn-group">
+                <button class="btn btn-default tms-btn-select-context"
+                        type="button" ng-click="vm.selectContext()">
+                    {{vm.context ? 'Context: ' + vm.context.name : 'Select context'}}
+                </button>
+            </div>
+        </div>
+    </toolbar>
+
+    <tms-grid
+        fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+        row-click="vm.navigateToJob(row)"
+        compute-columns="vm.computeColumns(data, meta)"
+        control-object="vm.tableControlObject"
+        on-page-changed="vm.onPageChanged(page)"
+        storage-key-fn="vm.getStorageKey()">
+        <csv-export link="/jobs/csv?contextId={{vm.context.id}}">
+        </csv-export>
+    </tms-grid>
+</div>

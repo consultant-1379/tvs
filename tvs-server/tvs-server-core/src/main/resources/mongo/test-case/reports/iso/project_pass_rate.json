@@ -1,0 +1,13 @@
+{
+  "$project": {
+    "priority": 1,
+    "component": 1,
+    "group": 1,
+    "total": 1,
+    "passed": 1,
+    "cancelled": 1,
+    "failed": 1,
+    "broken": 1,
+    "passRate": { "$multiply": [ {"$divide" : [ "$passed", "$total" ] } , 100 ] }
+  }
+}

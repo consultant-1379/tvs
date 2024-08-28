@@ -1,0 +1,12 @@
+{
+  "$match": {
+    "result.resultCode": {
+      "$in": [
+        "SUCCESS",
+        "PASSED",
+        "FAILED",
+        "FAILURE"
+      ]
+    }
+  }
+}

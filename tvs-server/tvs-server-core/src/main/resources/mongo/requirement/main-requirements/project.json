@@ -1,0 +1,32 @@
+{
+  "$project": {
+    "name": 1,
+    "epicCount": 1,
+    "testCaseCount": 1,
+    "userStoryCount": 1,
+    "usWithTestResults": 1,
+    "SOC": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$epicWithTestResults",
+            "$epicCount"
+          ]
+        },
+        100
+      ]
+    },
+    "SOV": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$epicWithFullPass",
+            "$epicCount"
+          ]
+        },
+        100
+      ]
+    }
+  }
+}
+ļ

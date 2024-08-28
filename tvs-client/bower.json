@@ -1,0 +1,13 @@
+{
+  "name": "tvs-client",
+  "version": "3.3.79-SNAPSHOT",
+  "private": true,
+  "dependencies": {
+    "tms-client-shared": "git+ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.cifwk.taf/tms-client-shared#eeaacec0b0b7ed740d5b5b9aa17c47a373e285b5",
+    "ng-tags-input": "~3.2.0"
+  },
+  "resolutions": {
+    "angular": "1.4.10",
+    "ng-table": "0.8.3"
+  }
+}

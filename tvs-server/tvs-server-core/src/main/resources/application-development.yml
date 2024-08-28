@@ -1,0 +1,15 @@
+spring:
+    profiles: development
+    profiles.include: mongodb
+
+hosts.mongodb: localhost
+
+gtms:
+    tce.url: http://localhost:8081/
+
+ldap:
+    dnPattern: uid={0},ou=people
+    dnPatternExternal: uid={0},ou=external
+
+spring.mail.port: 3025
+

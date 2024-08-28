@@ -1,0 +1,12 @@
+{
+  "$group": {
+    "_id": {
+      "dropName": "$DROP_NAME",
+      "isoVersion": "$ISO_VERSION",
+      "tag": #
+    },
+    "total": { "$sum": 1 },
+    "passed": { "$sum": "$passed" },
+    "resultCode": { $addToSet: "$resultCode" }
+  }
+}

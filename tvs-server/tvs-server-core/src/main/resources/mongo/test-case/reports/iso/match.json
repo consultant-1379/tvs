@@ -1,0 +1,23 @@
+{
+  "$match": {
+    "$and": [
+      {
+        "ISO_VERSION": #
+      },
+      {
+        "jobId": { "$in" : # }
+      },
+      {
+        "contextId": { "$in" : # }
+      },
+      {
+        #: { "$exists" : true }
+      },
+      {
+        "ignored": {
+          "$ne": true
+        }
+      }
+    ]
+  }
+}

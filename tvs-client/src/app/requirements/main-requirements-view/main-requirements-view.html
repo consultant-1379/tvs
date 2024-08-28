@@ -1,0 +1,9 @@
+<tms-grid
+    fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+    row-click="vm.navigate(row)"
+    compute-columns="vm.computeColumns(data, meta)"
+    control-object="vm.tableControlObject"
+    storage-key-fn="vm.getStorageKey()">
+    <csv-export link="/project-requirements/csv">
+    </csv-export>
+</tms-grid>

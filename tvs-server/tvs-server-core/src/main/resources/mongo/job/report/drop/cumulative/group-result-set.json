@@ -1,0 +1,16 @@
+{
+  "$group": {
+    "_id": {
+      "dropName": "$DROP_NAME",
+      "name": "$name"
+    },
+    "testCaseCount": {"$sum": 1},
+    "result": {
+      "$push": {
+        "resultCode": "$resultCode",
+        "iso": "$ISO_VERSION",
+        "date": "$time.stopDate"
+      }
+    }
+  }
+}

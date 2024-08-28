@@ -1,0 +1,33 @@
+{
+  "$group": {
+    "_id": null,
+    "total": {
+      "$sum": 1
+    },
+    "passed": {
+      "$sum": {
+        "$cond": [ { "$eq": [ "$resultCode", "PASSED"]}, 1, 0]
+      }
+    },
+    "cancelled": {
+      "$sum": {
+        "$cond": [ { "$eq": [ "$resultCode", "CANCELLED"]}, 1, 0]
+      }
+    },
+    "failed": {
+      "$sum": {
+        "$cond": [ { "$eq": [ "$resultCode", "FAILED"]}, 1, 0]
+      }
+    },
+    "broken": {
+      "$sum": {
+        "$cond": [ { "$eq": [ "$resultCode", "BROKEN"]}, 1, 0]
+      }
+    },
+    "pending": {
+      "$sum": {
+        "$cond": [ { "$eq": [ "$resultCode", "PENDING"]}, 1, 0]
+      }
+    }
+  }
+}

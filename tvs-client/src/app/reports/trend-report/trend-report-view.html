@@ -1,0 +1,152 @@
+<toolbar>
+    <div class="form-inline">
+        <div class="btn-group">
+            <button class="btn btn-default tms-btn-select-context"
+                    type="button" ng-click="vm.selectContext()">
+                {{vm.context ? 'Context: ' + vm.context.name : 'Select context'}}
+            </button>
+        </div>
+    </div>
+</toolbar>
+
+<div class="panel panel-default tms-trend-report-panel">
+    <div class="panel-body">
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Report type:</label>
+                <tip-marker tip="Select grouping type - by priority, component or group fields in a test case data.
+                    Chart data can be deselected using colored control elements.">
+                </tip-marker>
+                <button class="btn btn-default tms-btn-trend-report-type"
+                        ng-model="vm.selectedReportType"
+                        ng-change="vm.onFilterChanged()"
+                        bs-options="type as type.value for type in vm.reportTypes"
+                        bs-select>
+                </button>
+            </div>
+            <div class="form-group">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label style="margin-bottom: 0">From ISO:</label>
+                        <tip-marker tip="Select version for a report.">
+                        </tip-marker>
+                    </div>
+                    <div class="form-group">
+                        <ui-select ng-model="vm.fromIso" ng-change="vm.onIsoRangeChanged()"
+                                   class="tms-btn-trend-version">
+                            <ui-select-match placeholder="Select ISO version">
+                                <span style="padding-right: 10px">{{$select.selected}}</span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="iso in vm.iso | filter: $select.search">
+                                <span>{{iso}}</span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-inline vertical-text">
+                    <div class="form-group">
+                        <label style="margin-bottom: 0">To ISO:</label>
+                        <tip-marker tip="Select version for a report.">
+                        </tip-marker>
+                    </div>
+                    <div class="form-group">
+                        <ui-select ng-model="vm.toIso" ng-change="vm.onIsoRangeChanged()"
+                                   class="tms-btn-trend-version">
+                            <ui-select-match placeholder="Select ISO version">
+                                <span style="padding-right: 10px">{{$select.selected}}</span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="iso in vm.iso | filter: $select.search">
+                                <span>{{iso}}</span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-inline vertical-text">
+                    <div class="form-group">
+                        <label style="margin-bottom: 0">Last</label>
+                    </div>
+                    <div class="form-group">
+                        <ui-select ng-model="vm.topIsoCount" ng-change="vm.onTopIsoChanged()"
+                                   class="tms-btn-trend-version">
+                            <ui-select-match placeholder="Select or type number">
+                                <span style="padding-right: 10px">{{$select.selected}}</span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="num in vm.getTopNList($select.search) | filter: $select.search">
+                                <span>{{num}}</span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                    <div class="form-group">
+                        <label style="margin-bottom: 0">ISO's</label>
+                        <tip-marker tip="Number of last ISO versions for a report."></tip-marker>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-inline tms-trend-report-form-inline">
+            <div class="form-group">
+                <label style="margin-bottom: 0">Test case status:</label>
+                <tip-marker tip="Display rows having test cases with selected statuses in every ISO.">
+                </tip-marker>
+                <button name="resultCode" ng-model="vm.resultCode" ng-change="vm.onFilterChanged()"
+                        class="btn btn-default ellipsis-overflow ng-pristine ng-valid ng-scope ng-touched"
+                        ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
+                        data-multiple="1" data-max-length="1"
+                        bs-options="option as option for option in vm.getStatuses()" bs-select="" style="">
+                    Click to select...&nbsp;<span class="caret"></span></button>
+            </div>
+            <div class="form-group">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label style="margin-bottom: 0">Test Activities:</label>
+                        <tip-marker tip="Select Activities to filter by.">
+                        </tip-marker>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default tms-btn-iso-version"
+                                ng-model="vm.enabledActivityLabels"
+                                ng-change="vm.onFilterChanged()"
+                                data-placeholder="Select labels"
+                                data-multiple="1"
+                                bs-options="activity as activity for activity in vm.activityLabels"
+                                all-none-buttons="true"
+                                bs-select>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <loading-wrapper>
+            <nvd3
+                options="vm.chartOptions"
+                data="vm.chartData"
+                config="{deepWatchData: true, refreshDataOnly: false}">
+            </nvd3>
+        </loading-wrapper>
+    </div>
+</div>
+
+<p ng-if="vm.loading" class="text-muted">
+    <span>Loading...</span>
+</p>
+
+<div ng-if="!(vm.dropIsoMap|_:'isEmpty')">
+    <div class="panel panel-default panel-sm tms-panel-grid-buttons">
+        <tms-grid
+            template-url="app/reports/trend-report/table/trend-grid.html"
+            heading="Test Case Pass Rate by {{vm.groupName()}}"
+            pagination-template="app/common/pagination/no-pagination.html"
+            fetch-data="vm.fetchData(page, size, orderBy, orderMode, q)"
+            compute-columns="vm.computeColumns(data, meta)"
+            control-object="vm.tableControlObject"
+            storage-key-fn="vm.getStorageKey()">
+            <csv-export
+                link="/contexts/{{vm.context.id}}/reports/trend/csv?reportType={{vm.selectedReportType.key}}&iso={{vm.fromIso}}&toIso={{vm.toIso}}&jobNames={{vm.jobNamesForFilter}}">
+            </csv-export>
+        </tms-grid>
+    </div>
+</div>

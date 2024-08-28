@@ -1,0 +1,16 @@
+spring:
+    profiles: full
+    profiles.include: mongodb
+
+jersey.app.monitoring.enabled: true
+jersey.app.request.verbose.logging: true
+
+ldap:
+    url: ldap://ldap-egad.internal.ericsson.com:3268
+    user: attafegad@ericsson.se
+    password: fReSWuQ4p6uxabeQ
+    search.base: OU=ID,OU=Data,dc=ericsson,DC=se
+    dnPattern: CN={0},OU=CA,OU=User,OU=P001,OU=ID,OU=Data,dc=ericsson,DC=se
+    dnPatternExternal: CN={0},OU=External,OU=P017,OU=ID,OU=Data,dc=ericsson,DC=se
+
+logging.config: classpath:logback-testing.xml

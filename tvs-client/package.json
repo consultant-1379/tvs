@@ -1,0 +1,15 @@
+{
+  "name": "tvs-client",
+  "version": "3.3.79-SNAPSHOT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "1.8.4",
+    "gulp": "3.9.0",
+    "tms-client-build": "git+ssh://gerrit.ericsson.se:29418/OSS/com.ericsson.cifwk.taf/tms-client-build"
+  },
+  "engines": {
+    "node": "6.17.1",
+    "npm": "2.14.21"
+  }
+}

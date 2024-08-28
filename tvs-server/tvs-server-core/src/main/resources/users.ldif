@@ -1,0 +1,97 @@
+dn: ou=people,dc=springframework,dc=org
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=external,dc=springframework,dc=org
+objectclass: organizationalUnit
+ou: external
+
+dn: uid=admin,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Oliver Borreson
+givenName: Oliver
+sn: Borreson
+mail: oliver.borreson@ericsson.se
+uid: admin
+userPassword: password
+
+dn: uid=user,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Charles Karlsson
+givenName: Charles
+sn: Karlsson
+mail: charles.karlsson@ericsson.se
+uid: user
+userPassword: password
+
+dn: uid=test,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Matilda Eliason
+givenName: Matilda
+sn: Eliason
+mail: matilda.eliason@ericsson.se
+uid: test
+userPassword: password
+
+dn: uid=viewer,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Jerk Hassel
+givenName: Jerk
+sn: Hassel
+mail: jerk.hassel@ericsson.se
+uid: viewer
+userPassword: password
+
+dn: uid=manager,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Ingemar Granstrom
+givenName: Ingemar
+sn: Granstrom
+mail: ingemar.granstrom@ericsson.se
+uid: manager
+userPassword: password
+
+dn: uid=security,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Greger Kraft
+givenName: Greger
+sn: Kraft
+mail: greger.kraft@ericsson.se
+uid: security
+userPassword: password
+
+dn: uid=unguessable,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Olivia Wilde
+givenName: Olivia
+sn: Wilde
+mail: olivia.wilde@ericsson.se
+uid: unguessable
+userPassword: password
+
+dn: uid=roleUser,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Thomas Anderson
+givenName: Thomas
+sn: Anderson
+mail: thomas.anderson@ericsson.se
+uid: roleUser
+userPassword: password
+
+dn: uid=itestuser,ou=people,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Karl Charlesson
+givenName: Karl
+sn: Charlesson
+mail: karl.charlesson@ericsson.se
+uid: itestuser
+userPassword: password
+
+dn: uid=consultant,ou=external,dc=springframework,dc=org
+objectclass: organizationalPerson
+cn: Joe Smeth
+givenName: Joe
+sn: Smeth
+mail: joe.smeth@ericsson.se
+uid: consultant
+userPassword: password

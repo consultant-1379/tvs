@@ -1,0 +1,36 @@
+{
+  "$group": {
+    "_id": "$REQUIREMENTS",
+    "testCaseCount": {
+      "$sum": 1
+    },
+    "failedTestCaseCount": {
+      "$sum": {
+        "$cond": [
+          {
+            "$eq": [
+              "$resultCode",
+              "FAILED"
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    },
+    "passedTestCaseCount": {
+      "$sum": {
+        "$cond": [
+          {
+            "$eq": [
+              "$resultCode",
+              "PASSED"
+            ]
+          },
+          1,
+          0
+        ]
+      }
+    }
+  }
+}

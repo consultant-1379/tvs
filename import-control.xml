@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE import-control PUBLIC
+        "-//Puppy Crawl//DTD Import Control 1.1//EN"
+        "http://www.puppycrawl.com/dtds/import_control_1_1.dtd">
+
+<import-control pkg="com.ericsson.gic.tms">
+
+    <!-- Allow all by default -->
+    <allow pkg="java"/>
+    <allow pkg="javax"/>
+    <allow pkg="org"/>
+    <allow pkg="com"/>
+    <allow pkg="net"/>
+    <allow pkg="ch"/>
+    <allow pkg="junit"/>
+    <allow pkg="contribs"/>
+    <allow pkg="ma"/>
+    <allow pkg="junitparams"/>
+    <allow pkg="de.flapdoodle.embed"/>
+    <allow pkg="freemarker"/>
+
+    <!-- Disallow sun.* imports as they are not guaranteed to be the same across all JVMs -->
+    <disallow pkg="sun"/>
+
+    <!-- Disallow specific packages and classes -->
+    <disallow pkg="javax.transaction"/>
+    <disallow pkg="org.codehaus.jackson"/>
+    <disallow pkg="org.hamcrest"/>
+    <disallow pkg="org.jvnet.hk2.annotations"/>
+    <disallow pkg="org.testng.asserts"/>
+    <disallow class="org.springframework.security.test.context.support.WithMockUser"/>
+    <disallow pkg="org.apache.commons"/>
+
+</import-control>

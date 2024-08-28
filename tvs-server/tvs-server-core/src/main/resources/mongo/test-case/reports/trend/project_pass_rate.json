@@ -1,0 +1,7 @@
+{
+  "$project": {
+    "_id": 1,
+    "resultCode": 1,
+    "passRate": {"$multiply": [{ "$divide": ["$passed", "$total"]}, 100]}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$project": {
+    "name": 1,
+    "testCaseCount": 1,
+    "userStoryCount": 1,
+    "usWithTestResults": 1,
+    "SOC": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$usWithTestResults",
+            "$userStoryCount"
+          ]
+        },
+        100
+      ]
+    },
+    "SOV": {
+      "$multiply": [
+        {
+          "$divide": [
+            "$usWithFullPass",
+            "$userStoryCount"
+          ]
+        },
+        100
+      ]
+    }
+  }
+}
